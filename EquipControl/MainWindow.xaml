@@ -1,0 +1,55 @@
+﻿<Window x:Class="EquipControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EquipControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="layoutGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*" />
+            <ColumnDefinition Width="484*" />
+            <ColumnDefinition Width="150*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!-- RowDef 24 -->
+            <RowDefinition Height="118*" />
+            <RowDefinition Height="24*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="24*" />
+            <RowDefinition Height="24*" />
+            <RowDefinition Height="29*" />
+            <RowDefinition Height="164*" />
+            <RowDefinition Height="27*" />
+        </Grid.RowDefinitions>
+        <TextBox Name="txtBoxLogin" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US">
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="Login" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        
+        <PasswordBox Name="textBoxPwd" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" PasswordChar="*" FontSize="15">
+        </PasswordBox>
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="EnterAccount" FontSize="17">Войти</Button>
+    </Grid>
+</Window>
