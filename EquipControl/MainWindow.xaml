@@ -29,7 +29,7 @@
                     <Style.Resources>
                         <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                             <VisualBrush.Visual>
-                                <Label Content="Login" Foreground="LightGray" />
+                                <Label Content="Login" FontSize="15" Foreground="LightGray" />
                             </VisualBrush.Visual>
                         </VisualBrush>
                     </Style.Resources>

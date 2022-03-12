@@ -23,5 +23,13 @@ namespace EquipControl
         {
             InitializeComponent();
         }
+
+        private void Search(object sender, RoutedEventArgs e)
+        {
+            string audienceNumber = txtBoxAudienceNum.Text;
+            string query = $"SELECT * FROM Equip WHERE AudienceNum = {audienceNumber}";
+            List<Equip> equips = Database.queryFillingEquip(query);
+            equipGrid.ItemsSource = equips;
+        }
     }
 }

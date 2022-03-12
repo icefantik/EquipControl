@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Equip.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="SearchAudience.xaml.cs">
       <DependentUpon>SearchAudience.xaml</DependentUpon>
     </Compile>

@@ -8,18 +8,22 @@
         Title="SearchAudience" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150*" />
-            <ColumnDefinition Width="484*" />
-            <ColumnDefinition Width="150*" />
+            <ColumnDefinition Width="35*" />
+            <ColumnDefinition Width="261*" />
+            <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="88*" />
+            <RowDefinition Height="30*" />
             <RowDefinition Height="24*" />
-            <RowDefinition Height="24*" /> <!-- Прослойка между полем для ввода и кнопкой -->
             <RowDefinition Height="24*" />
+            <!-- Прослойка между полем для ввода и кнопкой -->
             <RowDefinition Height="278*" />
+            <RowDefinition Height="24*" />
         </Grid.RowDefinitions>
-        <TextBox Name="txtBoxLogin" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" FontSize="16">Поиск</Button>
+        <TextBox Name="txtBoxAudienceNum" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
+        <Button Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="1" Click="Search" FontSize="16">Поиск</Button>
+        <DataGrid x:Name="equipGrid" IsReadOnly="True" AutoGenerateColumns="True" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" ItemsSource="{DynamicResource ResourceKey=Equip}">
+            
+        </DataGrid>
     </Grid>
 </Window>

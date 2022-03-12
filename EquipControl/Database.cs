@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,33 @@ namespace EquipControl
         public SqlConnection getConnection()
         {
             return sqlConnection;
+        }
+        public static DataTable fillingDataAdapter(string query)
+        {
+            Database database = new Database();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+
+            SqlCommand command = new SqlCommand(query, database.getConnection());
+            sqlDataAdapter.SelectCommand = command;
+            sqlDataAdapter.Fill(table);
+            return table;
+        }
+        public static List<Equip> queryFillingEquip(string query)
+        {
+            DataTable dataTable = fillingDataAdapter(query);
+            List<Equip> equipsDataTable = new List<Equip>();
+            for (int index = 0; index < dataTable.Rows.Count; ++index)
+            {
+                Equip item = new Equip();
+                item.id = int.Parse(dataTable.Rows[index][0].ToString());
+                item.equipType = dataTable.Rows[index][1].ToString();
+                item.name = dataTable.Rows[index][2].ToString();
+                item.DayOf = dataTable.Rows[index][3].ToString();
+                item.AudienceNum = int.Parse(dataTable.Rows[index][4].ToString());
+                equipsDataTable.Add(item);
+            }
+            return equipsDataTable;
         }
     }
 }

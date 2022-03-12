@@ -47,21 +47,13 @@ namespace EquipControl
                     searchAudience.Owner = this;
                     searchAudience.Show(); //Переход на новое окно
                 } else {
-                    ShowMessage("Введён неправильный логин или пароль", "Warning");
+                    Message.ShowMessage("Введён неправильный логин или пароль", "Warning");
                 }
             }
             else
             {
-
+                Message.ShowMessage("Введён неправильный логин или пароль", "Warning");
             }
-        }
-        private static void ShowMessage(string messageBoxText, string caption)
-        {
-            MessageBoxButton button = MessageBoxButton.YesNoCancel;
-            MessageBoxImage icon = MessageBoxImage.Warning;
-            //MessageBoxResult result;
-
-            MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
         }
     }
 }
