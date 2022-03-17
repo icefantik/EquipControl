@@ -11,6 +11,13 @@ namespace EquipControl
     class Database
     {
         private SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-PNAU4VT;Initial Catalog=EquipControl; Integrated Security=true");
+        public static string TablEquip = "Equip";
+        public static string ColEquipId = "id";
+        public static string ColEquipTypeId = "EquipTypeId";
+        public static string ColNameEquip = "NameEquip";
+        public static string ColDayOf = "DayOf";
+        public static string ColAudienceNum = "AudienceNum";
+
         public static string TablUsers = "users";
         public static string ColUserLogin = "usrlogin";
         public static string ColUserPwd = "pwd";
@@ -58,6 +65,16 @@ namespace EquipControl
                 equipsDataTable.Add(item);
             }
             return equipsDataTable;
+        }
+
+        public static void runQuerty(string query)
+        {
+            Database database = new Database();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            SqlCommand command = new SqlCommand(query, database.getConnection());
+            sqlDataAdapter.SelectCommand = command;
+            sqlDataAdapter.Fill(table);
         }
     }
 }

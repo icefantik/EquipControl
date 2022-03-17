@@ -13,17 +13,17 @@
             <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*" />
-            <RowDefinition Height="24*" />
-            <RowDefinition Height="24*" />
+            <RowDefinition Height="31*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
             <!-- Прослойка между полем для ввода и кнопкой -->
-            <RowDefinition Height="278*" />
-            <RowDefinition Height="24*" />
+            <RowDefinition Height="284*" />
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="25*" />
         </Grid.RowDefinitions>
         <TextBox Name="txtBoxAudienceNum" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="1" Click="Search" FontSize="16">Поиск</Button>
-        <DataGrid x:Name="equipGrid" IsReadOnly="True" AutoGenerateColumns="True" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" ItemsSource="{DynamicResource ResourceKey=Equip}">
-            
-        </DataGrid>
+        <Button x:Name="SerchBtn" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="1" Click="Search" FontSize="16">Поиск</Button>
+        <DataGrid x:Name="equipGrid" IsReadOnly="False" AutoGenerateColumns="True" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="1" ItemsSource="{DynamicResource ResourceKey=Equip}"/>
+        <Button x:Name="EditList" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Click="SaveTable" FontSize="16">Сохранить</Button>
     </Grid>
 </Window>
