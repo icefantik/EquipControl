@@ -30,7 +30,7 @@ namespace EquipControl
             audienceNumber = txtBoxAudienceNum.Text;
             if (audienceNumber.Length > 0)
             {
-                string query = $"SELECT * FROM Equip WHERE AudienceNum = {audienceNumber}";
+                string query = $"SELECT * FROM {Database.TablEquip} WHERE AudienceNum = {audienceNumber}";
                 List<Equip> equips = Database.queryFillingEquip(query);
                 equipGrid.ItemsSource = equips;
             }
@@ -50,18 +50,14 @@ namespace EquipControl
                     $"{Database.ColDayOf} = \'{item.DayOf}\', " +
                     $"{Database.ColAudienceNum} = {item.AudienceNum} " +
                     $"WHERE {Database.ColEquipId} = {item.id}");
-                /*
-                if (numberElem != len)
-                {
-                    query += $"({item.id}, {item.equipType}, {item.name}, {item.DayOf}, {item.AudienceNum}),";
-                }
-                else
-                {
-                    query += $"({item.id}, {item.equipType}, {item.name}, {item.DayOf}, {item.AudienceNum})";
-                }
-                ++numberElem;
-                */
             }
+        }
+        private void DelElemFromTable(object sender, RoutedEventArgs e)
+        {
+            string numEquip = txtBoxNumEquip.Text;
+            string query = $"DELETE FROM {Database.TablEquip} WHERE {Database.ColEquipId} = {numEquip}";
+            Database.runQuerty(query);
+            //Сделай update всей таблицы
         }
     }
 }

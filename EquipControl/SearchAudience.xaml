@@ -10,20 +10,27 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*" />
             <ColumnDefinition Width="261*" />
-            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="31*" />
             <RowDefinition Height="25*" />
             <RowDefinition Height="25*" />
+
             <!-- Прослойка между полем для ввода и кнопкой -->
+            <RowDefinition Height="25*" />
             <RowDefinition Height="284*" />
             <RowDefinition Height="25*" />
             <RowDefinition Height="25*" />
         </Grid.RowDefinitions>
         <TextBox Name="txtBoxAudienceNum" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button x:Name="SerchBtn" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="1" Click="Search" FontSize="16">Поиск</Button>
+        <Button x:Name="SerchBtn" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Click="Search" FontSize="16">Поиск</Button>
+        
         <DataGrid x:Name="equipGrid" IsReadOnly="False" AutoGenerateColumns="True" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="1" ItemsSource="{DynamicResource ResourceKey=Equip}"/>
-        <Button x:Name="EditList" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Click="SaveTable" FontSize="16">Сохранить</Button>
+        <Button x:Name="EditList" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Click="SaveTable" FontSize="16">Сохранить</Button>
+        
+        <TextBox Name="txtBoxNumEquip" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
+        <Button x:Name="delElem" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Click="DelElemFromTable" FontSize="16">Удалить</Button>
     </Grid>
 </Window>
