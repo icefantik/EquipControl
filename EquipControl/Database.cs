@@ -81,7 +81,14 @@ namespace EquipControl
             DataTable table = new DataTable();
             SqlCommand command = new SqlCommand(query, database.getConnection());
             sqlDataAdapter.SelectCommand = command;
-            sqlDataAdapter.Fill(table);
+            try
+            {
+                sqlDataAdapter.Fill(table);
+            }
+            catch (SqlException sqlEx)
+            {
+
+            }
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿<Window x:Class="EquipControl.AddElemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EquipControl"
+        mc:Ignorable="d"
+        Title="AddElemWindow" Height="144.914" Width="655.084">
+    <Grid Margin="0,0,0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*" />
+            <ColumnDefinition Width="181*" />
+            <ColumnDefinition Width="225*" />
+            <ColumnDefinition Width="84*" />
+            <ColumnDefinition Width="84*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="24*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="23*" />
+            <!-- -->
+            <RowDefinition Height="21*" />
+        </Grid.RowDefinitions>
+        <TextBox Name="idTextBox" Grid.Column="0" Grid.Row ="1"></TextBox>
+        <TextBox Name="typeTextBox" Grid.Column="1" Grid.Row ="1"></TextBox>
+        <TextBox Name="nameTextBox" Grid.Column="2" Grid.Row ="1"></TextBox>
+        <TextBox Name="dateTextBox" Grid.Column="3" Grid.Row ="1"></TextBox>
+        <TextBox Name="audienceNumTextBox" Grid.Column="4" Grid.Row ="1"></TextBox>
+        <Button Grid.Column="4" Grid.Row ="3">Добавить</Button>
+    </Grid>
+</Window>
