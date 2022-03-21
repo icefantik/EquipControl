@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Equip.cs" />
     <Compile Include="equipGrid\Rows.cs" />
+    <Compile Include="EquipType.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="SearchAudience.xaml.cs">
       <DependentUpon>SearchAudience.xaml</DependentUpon>

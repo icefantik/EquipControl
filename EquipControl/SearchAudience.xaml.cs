@@ -61,7 +61,7 @@ namespace EquipControl
         {
             AddElemWindow addElemWindow = new AddElemWindow();
             addElemWindow.Owner = this;
-            addElemWindow.Show();            
+            addElemWindow.Show();
         }
         private void updateEquipsTable() {
             string query = $"SELECT * FROM {Database.TablEquip} WHERE AudienceNum = {audienceNumber}";

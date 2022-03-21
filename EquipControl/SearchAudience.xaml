@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EquipControl"
         mc:Ignorable="d"
-        Title="SearchAudience" Height="450" Width="800">
+        Title="SearchAudience" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*" />
@@ -19,20 +19,20 @@
             <RowDefinition Height="23*" />
             <!-- Прослойка между полем для ввода и кнопкой -->
             <RowDefinition Height="23*" />
-            <RowDefinition Height="28*" />
+            <RowDefinition Height="23*" />
             <RowDefinition Height="250*" />
-            <RowDefinition Height="22*" />
-            <RowDefinition Height="22*" />
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="23*" />
         </Grid.RowDefinitions>
         <TextBox Name="txtBoxAudienceNum" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button x:Name="SerchBtn" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Click="Search" FontSize="16">Поиск</Button>
+        <Button Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Click="Search" FontSize="17" Background="#FFFFFF" VerticalContentAlignment ="Center">Поиск</Button>
 
         <DataGrid x:Name="equipGrid" IsReadOnly="False" AutoGenerateColumns="True" Grid.Column="1" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="1" ItemsSource="{DynamicResource ResourceKey=Equip}"/>
-        <Button x:Name="EditList" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Click="SaveTable" FontSize="16">Сохранить</Button>
+        <Button x:Name="EditList" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Click="SaveTable" FontSize="17" Background="#FFFFFF">Сохранить</Button>
 
-        <Button x:Name="addBtn" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Click="OpenWindowAddElem" FontSize="16">Добавить</Button>
+        <Button x:Name="addBtn" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Click="OpenWindowAddElem" FontSize="17" Background="#FFFFFF">Добавить</Button>
 
-        <TextBox Name="txtBoxNumEquip" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
-        <Button x:Name="delElem" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Click="DelElemFromTable" FontSize="16">Удалить</Button>
+        <TextBox Name="txtBoxNumEquip" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True"  Language="en-US"/>
+        <Button x:Name="delElem" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Click="DelElemFromTable" FontSize="17" Background="#FFFFFF">Удалить</Button>
     </Grid>
 </Window>

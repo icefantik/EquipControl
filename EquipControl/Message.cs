@@ -11,7 +11,7 @@ namespace EquipControl
     {
         public static void ShowMessage(string messageBoxText, string caption)
         {
-            MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Warning;
 
             MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
