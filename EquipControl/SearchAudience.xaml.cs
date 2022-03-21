@@ -20,9 +20,11 @@ namespace EquipControl
     public partial class SearchAudience : Window
     {
         private static string audienceNumber = null;
+        private static string querEquipOnNumAudience = $"SELECT * FROM {Database.TablEquip} WHERE AudienceNum = {audienceNumber}";
         public SearchAudience()
         {
             InitializeComponent();
+            updateEquipsTable();
         }
 
         private void Search(object sender, RoutedEventArgs e)
@@ -64,7 +66,13 @@ namespace EquipControl
             addElemWindow.Show();
         }
         private void updateEquipsTable() {
-            string query = $"SELECT * FROM {Database.TablEquip} WHERE AudienceNum = {audienceNumber}";
+            string query;
+            if (audienceNumber != null) {
+                query = $"SELECT * FROM {Database.TablEquip} WHERE AudienceNum = {audienceNumber}";
+            } 
+            else {
+                query = $"SELECT * FROM {Database.TablEquip}";
+            }
             List<Equip> equips = Database.queryFillingEquip(query);
             equipGrid.ItemsSource = equips;
         }
