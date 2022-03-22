@@ -20,7 +20,6 @@ namespace EquipControl
     public partial class SearchAudience : Window
     {
         private static string audienceNumber = null;
-        private static string querEquipOnNumAudience = $"SELECT * FROM {Database.TablEquip} WHERE AudienceNum = {audienceNumber}";
         public SearchAudience()
         {
             InitializeComponent();
