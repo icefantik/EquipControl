@@ -44,7 +44,7 @@ namespace EquipControl
             foreach (var item in equipGrid.Items.OfType<Equip>())
             {
                 Database.runQuerty($"update {Database.TablEquip} set {Database.ColEquipId} = {item.id}, " +
-                    $"{Database.ColEquipTypeId} = {item.equipType}, " +
+                    $"{Database.ColEquipTypeId} = {Database.getIdForName(item.equipType)}, " +
                     $"{Database.ColNameEquip} = \'{item.name}\', " +
                     $"{Database.ColDayOf} = \'{item.DayOf}\', " +
                     $"{Database.ColAudienceNum} = {item.AudienceNum} " +

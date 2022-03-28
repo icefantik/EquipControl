@@ -106,6 +106,18 @@ namespace EquipControl
             }
             return equipTypes;
         }
+        public static int getIdForName(string nameType)
+        {
+            List<EquipType> equipTypes = getListEquipType($"SELECT * FROM {TablEquipType}");
+            foreach (var item in equipTypes)
+            {
+                if (item.name == nameType)
+                {
+                    return item.id;
+                }
+            }
+            return -1;
+        }
         private static void getNameEquipType(List<Equip> equips)
         {
             List<EquipType> equipTypes = getListEquipType($"SELECT * FROM {TablEquipType}");
