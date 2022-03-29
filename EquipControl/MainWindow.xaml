@@ -9,12 +9,13 @@
     <!-- Background="#2F2F2F" -->
     <Grid x:Name="layoutGrid">
         <Grid.ColumnDefinitions>
+            <!-- Разбиение на ширину -->
             <ColumnDefinition Width="200*" />
             <ColumnDefinition Width="484*" />
             <ColumnDefinition Width="200*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <!-- RowDef 24 -->
+            <!-- Разбиение на длины -->
             <RowDefinition Height="118*" />
             <RowDefinition Height="24*" />
             <RowDefinition Height="10*" />
@@ -25,12 +26,12 @@
             <RowDefinition Height="27*" />
         </Grid.RowDefinitions>
         <TextBox Name="txtBoxLogin" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US">
-            <TextBox.Style>
+            <TextBox.Style> <!-- Стиль делает текст прозрачным -->
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
                         <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                             <VisualBrush.Visual>
-                                <Label Content="Login" FontSize="15" Foreground="LightGray" />
+                                <Label Content="Login" FontSize="15" Foreground="LightGray" /> <!-- Текст который будет прозрачным в поле для ввода -->
                             </VisualBrush.Visual>
                         </VisualBrush>
                     </Style.Resources>
@@ -50,7 +51,7 @@
         </TextBox>
         
         <PasswordBox Name="textBoxPwd" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" PasswordChar="*" FontSize="15">
-        </PasswordBox>
-        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="EnterAccount" FontSize="17" Background="#FFFFFF">Войти</Button>
+        </PasswordBox> <!-- Поле для ввода пароля -->
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="EnterAccount" FontSize="17" Background="#FFFFFF">Войти</Button> <!-- Кнопка для входа -->
     </Grid>
 </Window>
