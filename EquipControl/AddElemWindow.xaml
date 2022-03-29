@@ -8,6 +8,7 @@
         Title="AddElemWindow" Height="144.914" Width="655.084">
     <Grid Margin="0,0,0,3">
         <Grid.ColumnDefinitions>
+            <!-- Разбиение на ширину -->
             <ColumnDefinition Width="53*" />
             <ColumnDefinition Width="181*" />
             <ColumnDefinition Width="225*" />
@@ -15,6 +16,7 @@
             <ColumnDefinition Width="84*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <!-- Разбиение на длины -->
             <RowDefinition Height="23*" />
             <RowDefinition Height="24*" />
             <!-- interlayer 20 -->
@@ -22,12 +24,17 @@
             <RowDefinition Height="23*" />
             <RowDefinition Height="21*" />
         </Grid.RowDefinitions>
+        <!-- Поле для ввода номера аудитории -->
         <TextBox Name="idTextBox" Grid.Column="0" Grid.Row ="1"></TextBox>
-        <ComboBox  Name="typeComboBox" Grid.Column="1" Grid.Row ="1" ItemsSource="{DynamicResource ResourceKey=EquipType}">
-        </ComboBox>
+        <!-- Выпадающий список оборудования -->
+        <ComboBox  Name="typeComboBox" Grid.Column="1" Grid.Row ="1" ItemsSource="{DynamicResource ResourceKey=EquipType}"/>
+        <!-- Поле для ввода названия аудитории -->
         <TextBox Name="nameTextBox" Grid.Column="2" Grid.Row ="1"></TextBox>
+        <!-- Поле для ввода даты установки -->
         <TextBox Name="dateTextBox" Grid.Column="3" Grid.Row ="1"></TextBox>
+        <!-- Поле для ввода номера аудитории -->
         <TextBox Name="audienceNumTextBox" Grid.Column="4" Grid.Row ="1"></TextBox>
+        <!-- Кнопка для добавления новых данных -->
         <Button Grid.Column="4" Grid.Row ="3" Click="AddElem">Добавить</Button>
     </Grid>
 </Window>

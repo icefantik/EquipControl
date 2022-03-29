@@ -24,15 +24,21 @@
             <RowDefinition Height="23*" />
             <RowDefinition Height="23*" />
         </Grid.RowDefinitions>
+        <!-- Поле для ввода номера аудитории -->
         <TextBox Name="txtBoxAudienceNum" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US"/>
+        <!-- Кнопка для поиска аудитории -->
         <Button Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Click="Search" FontSize="17" Background="#FFFFFF" VerticalContentAlignment ="Center">Поиск</Button>
-
+        
+        <!-- Таблица для хранения данных оборудования  -->
         <DataGrid x:Name="equipGrid" IsReadOnly="False" AutoGenerateColumns="True" Grid.Column="1" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="1" ItemsSource="{DynamicResource ResourceKey=Equip}"/>
+        <!-- Кнопка для сохранения изменения -->
         <Button x:Name="EditList" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Click="SaveTable" FontSize="17" Background="#FFFFFF">Сохранить</Button>
-
+        <!-- Кнопка для добавления нового оборудования -->
         <Button x:Name="addBtn" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Click="OpenWindowAddElem" FontSize="17" Background="#FFFFFF">Добавить</Button>
 
+        <!-- Поле для ввода номера оборудования для удаления -->
         <TextBox Name="txtBoxNumEquip" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True"  Language="en-US"/>
+        <!-- Кнопка для удаления по номеру аудитории -->
         <Button x:Name="delElem" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Click="DelElemFromTable" FontSize="17" Background="#FFFFFF">Удалить</Button>
     </Grid>
 </Window>

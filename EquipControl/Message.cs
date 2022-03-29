@@ -11,10 +11,10 @@ namespace EquipControl
     {
         public static void ShowMessage(string messageBoxText, string caption)
         {
-            MessageBoxButton button = MessageBoxButton.OK;
-            MessageBoxImage icon = MessageBoxImage.Warning;
+            MessageBoxButton button = MessageBoxButton.OK; //Тип кнопки на окне сообщения
+            MessageBoxImage icon = MessageBoxImage.Warning; //Тип картинки на окне сообщения
 
-            MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes); //Вывод сообщения с такстом и типом окна
         }
     }
 }

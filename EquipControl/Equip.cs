@@ -8,10 +8,10 @@ namespace EquipControl
 {
     class Equip
     {
-        public int id { get; set; }
-        public string equipType { get; set; }
-        public string name { get; set; }
-        public string DayOf { get; set; }
-        public int AudienceNum { get; set; }
+        public int id { get; set; } //Номер оборудования
+        public string equipType { get; set; } //Тип оборудования
+        public string name { get; set; } //Название оборудования
+        public string DayOf { get; set; } //Дата установки
+        public int AudienceNum { get; set; } //Номер аудитории
     }
 }

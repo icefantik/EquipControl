@@ -31,6 +31,26 @@ namespace EquipControl
         {
             string textLogin = txtBoxLogin.Text; //Текст из поля для ввода логина
             string textPwd = textBoxPwd.Password; //Текст из поля для ввода пароля
+<<<<<<< HEAD
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(); //Переменная для подключения к базе данных и исполнения запроса
+            DataTable table = new DataTable(); //Переменная для хранения таблицы из базы данных
+
+            string query = $"SELECT {Database.ColUserLogin}, {Database.ColUserPwd} FROM {Database.TablUsers} WHERE {Database.ColUserLogin} = \'{textLogin}\'"; //Запрос на нахождение логина
+            SqlCommand command = new SqlCommand(query, database.getConnection());
+            sqlDataAdapter.SelectCommand = command; //Исполнение запроса к базе данных
+            sqlDataAdapter.Fill(table); //Заполнение переменной данными из таблицы
+
+            if (table.Rows.Count == 1) //Проверка получил ли пользователь один логин и пароль
+            {
+                if (textLogin == table.Rows[0][0].ToString() && textPwd == table.Rows[0][1].ToString()) //Проверка на то что введённый логин и пароль совпадают с данными из базы данных
+                { 
+                    this.Hide(); //Закрытие MainWindow
+                    SearchAudience searchAudience = new SearchAudience(); //Создание объекта для перехода на новое окно
+                    searchAudience.Owner = this;
+                    searchAudience.Show(); //Переход на новое окно
+                } else {
+                    Message.ShowMessage("Введён неправильный логин или пароль", "Warning");  //Сообщение о том что введён не правельный логин и пароль
+=======
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(); // Переменная для подключения к базе данных и исполнения запроса
             DataTable table = new DataTable(); // Переменная для хранения таблицы из базы данных
 
@@ -48,11 +68,16 @@ namespace EquipControl
                     searchAudience.Show(); //Переход на новое окно
                 } else {
                     Message.ShowMessage("Введён неправильный логин или пароль", "Warning"); // Сообщение о том что введён не правельный логин и пароль
+>>>>>>> 5fabda6436348ea7751ef0d20e17b7a2b4555cd5
                 }
             }
             else
             {
+<<<<<<< HEAD
+                Message.ShowMessage("Введён неправильный логин или пароль", "Warning");  //Сообщение о том что введён не правельный логин и пароль
+=======
                 Message.ShowMessage("Введён неправильный логин или пароль", "Warning"); // Сообщение о том что введён не правельный логин и пароль
+>>>>>>> 5fabda6436348ea7751ef0d20e17b7a2b4555cd5
             }
         }
     }

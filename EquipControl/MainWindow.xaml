@@ -31,7 +31,12 @@
                     <Style.Resources>
                         <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                             <VisualBrush.Visual>
+<<<<<<< HEAD
+                                <!-- Текст который будет прозрачным в поле для ввода -->
+                                <Label Content="Login" FontSize="15" Foreground="LightGray" />
+=======
                                 <Label Content="Login" FontSize="15" Foreground="LightGray" /> <!-- Текст который будет прозрачным в поле для ввода -->
+>>>>>>> 5fabda6436348ea7751ef0d20e17b7a2b4555cd5
                             </VisualBrush.Visual>
                         </VisualBrush>
                     </Style.Resources>
@@ -49,9 +54,16 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
+<<<<<<< HEAD
+        <!-- Поле для ввода пароля -->
+        <PasswordBox Name="textBoxPwd" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" PasswordChar="*" FontSize="15"/>
+        <!-- Кнопка для входа -->
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="EnterAccount" FontSize="17" Background="#FFFFFF">Войти</Button>
+=======
         
         <PasswordBox Name="textBoxPwd" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" PasswordChar="*" FontSize="15">
         </PasswordBox> <!-- Поле для ввода пароля -->
         <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="EnterAccount" FontSize="17" Background="#FFFFFF">Войти</Button> <!-- Кнопка для входа -->
+>>>>>>> 5fabda6436348ea7751ef0d20e17b7a2b4555cd5
     </Grid>
 </Window>
